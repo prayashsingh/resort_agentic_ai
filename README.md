@@ -78,19 +78,25 @@ Each agent is auto-selected by the intent router and supports multi-turn chat us
 
 
 
+
 🚀 5. How to Run the Project Locally
+
 🔹 Step 1: Clone Repository
+          
           git clone https://github.com/your-username/resort-agentic-ai.git
           cd resort-agentic-ai
 
 🔹 Step 2: Create Virtual Environment
+          
           python -m venv venv
           venv\Scripts\activate   # Windows
 
 🔹 Step 3: Install Dependencies
+         
           pip install -r requirements.txt
 
 🔹 Step 4: Run Backend Server
+          
           uvicorn app.main:app
 
 
@@ -99,8 +105,10 @@ Backend runs at:
          http://127.0.0.1:8000
 
 🔹 Step 5: Run Frontend Chat UI (New Terminal)
+         
          streamlit run frontend/chat_ui.py
 
 🔹 Step 6: Run Operations Dashboard (Optional)
+         
          streamlit run dashboard/dashboard.py
 
