@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resort-agentic-ai
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: resort-ai
+  template:
+    metadata:
+      labels:
+        app: resort-ai
+    spec:
+      containers:
+        - name: backend
+          image: resort-agentic-ai:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: PYTHONPATH
+              value: /app
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: resort-ai-service
+spec:
+  type: NodePort
+  selector:
+    app: resort-ai
+  ports:
+    - port: 8000
+      targetPort: 8000
+      nodePort: 30007
